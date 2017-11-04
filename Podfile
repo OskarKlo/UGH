@@ -7,5 +7,6 @@ target 'Complaints' do
 
   # Pods for Complaints
 	pod 'Firebase/Core'
+	pod 'Firebase/Database'
 
 end
