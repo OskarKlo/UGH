@@ -47,17 +47,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
-                                    <action selector="submitUghButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kfl-iO-nfQ"/>
+                                    <action selector="submitComplainActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GPD-Aw-ASe"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="complainTextField" destination="Kpz-3I-JdY" id="rCv-Xq-7Ga"/>
-                        <outlet property="questionLabel" destination="WWf-9V-W5j" id="jvJ-KI-DTn"/>
-                        <outlet property="submitComplaintButton" destination="msz-bP-agk" id="hGh-NO-gaZ"/>
-                        <outlet property="ughTitleLabel" destination="ya6-wH-pb2" id="6jt-ya-EfN"/>
+                        <outlet property="questionLabel" destination="WWf-9V-W5j" id="lQ0-iU-QU2"/>
+                        <outlet property="submitComplainButton" destination="msz-bP-agk" id="eBB-Eq-zD7"/>
+                        <outlet property="titleLabel" destination="ya6-wH-pb2" id="2sp-YI-Xdr"/>
+                        <outlet property="userComplainTextField" destination="Kpz-3I-JdY" id="Tej-ah-Svd"/>
                         <segue destination="rEn-lw-nM4" kind="show" identifier="complaintSubmitSegue" id="R6Q-a7-2o0"/>
                     </connections>
                 </viewController>
@@ -65,21 +65,38 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Compaint Table View Controller-->
         <scene sceneID="aYk-Yf-gfo">
             <objects>
-                <tableViewController id="rEn-lw-nM4" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Peb-Yw-jcZ">
+                <tableViewController id="rEn-lw-nM4" customClass="CompaintTableViewController" customModule="Complaints" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" id="Peb-Yw-jcZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YMa-NL-Lpw">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="77" id="YMa-NL-Lpw">
+                                <rect key="frame" x="0.0" y="28" width="375" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YMa-NL-Lpw" id="g7a-el-jn8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCJ-fg-Er6">
+                                            <rect key="frame" x="8" y="8" width="98" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Complaint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riP-Qc-ZXk">
+                                            <rect key="frame" x="8" y="42" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="riP-Qc-ZXk" firstAttribute="top" secondItem="lCJ-fg-Er6" secondAttribute="bottom" constant="13" id="j0h-H9-gXe"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -91,7 +108,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mox-be-ldb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="-197"/>
+            <point key="canvasLocation" x="1173.5999999999999" y="-197.45127436281859"/>
         </scene>
     </scenes>
 </document>
